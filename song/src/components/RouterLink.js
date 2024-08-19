@@ -1,28 +1,26 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Link } from 'react-router-dom'
-import About from '../Pages/About'
-import Contact from '../Pages/Contact'
-import Features from '../Pages/Features'
-import Home from '../Pages/Home'
-import SignIn from '../Pages/SignIn'
-import SignUp from '../Pages/SignUp'
-// import styles from './RouterLink.css'
-
-
+import React from 'react';
+import "./RouterLink.css";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import About from '../Pages/About';
+import Contact from '../Pages/Contact';
+import Features from '../Pages/Features';
+import Home from '../Pages/Home';
+import SignIn from '../Pages/SignIn';
+import SignUp from '../Pages/SignUp';
 
 const RouterLink = () => {
   return (
     <Router>
          <div className='container'>
-           <nav className='nav'></nav>
-             <div style={{ flex: 2}}></div>
+           <nav className='nav'>
+             <div>
                  <ul>
                   <li>
-                     <Link to="/">Music</Link>
+                     <Link to="/">Muzic</Link>
                   </li>
                  </ul>
          </div>
-         <div style={{ flex: 4}}>
+         <div>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -38,7 +36,7 @@ const RouterLink = () => {
             </li>
           </ul>
          </div>
-         <div style={{ display: 'flex', flex: 2, flexDirection: 'row', justifyContent: 'flex-end'}}>
+         <div>
              <ul>
                <li>
                     <Link to="/signIn">Sign In</Link>
@@ -47,17 +45,18 @@ const RouterLink = () => {
                      <Link to="/signup">Sign Up</Link>
                 </li>
               </ul>
-          </div>  
-    <Routes> 
-        <Router Path='/' element={<Home />}/>
-        <Router Path='/about' element={<About/>} />
-        <Router Part='/features' element={<Features />} />
-        <Router part='/contact' element={<Contact />} />
-        <Router part='/signIn' element={<SignIn />} />
-        <Router part='/signup' element={<SignUp />} />
-        </Routes> 
-      </Router>
-    
+          </div>
+        </nav>  
+      </div>        
+     <Routes> 
+        <Route Path='/' element={<Home />}/>
+        <Route Path='/about' element={<About/>} />
+        <Route Part='/features' element={<Features />} />
+        <Route part='/contact' element={<Contact />} />
+        <Route part='/signIn' element={<SignIn />} />
+        <Route part='/signup' element={<SignUp />} />
+      </Routes> 
+    </Router>   
   )
 }
 
